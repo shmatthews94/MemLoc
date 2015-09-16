@@ -2,25 +2,144 @@
 <items version="2" >
 
     <item
-        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.8.0/jars/classes.jar"
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
-        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/classes-2d42b1aebcfe4347512a5d6933f5807e85061bca.jar" />
+        sha1="2e24e5f1b11170163028277de63f709e42525db4">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-9f48de22fe4bda59774ad37576b52e0fd7f7555a.jar" />
     </item>
     <item
-        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.8.0/jars/classes.jar"
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
-        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/classes-c4e9ff3e0c1c96f4cc380e6f7404b9d9fe9399d1.jar" />
+        sha1="d11330ea68c0d964d30d5caed1f27e6b1488b189">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-324c227dfe4702fcd99822e0318cff8e410f59b9.jar" />
     </item>
     <item
-        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.8.0/jars/classes.jar"
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
-        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/classes-a18b1341d59f179da951df38055ee6aca7859e8c.jar" />
+        sha1="98137c4d12c50923f5809852b1ef4d1c4e162081">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-1ae70fb5e60bf4a95009552a7a8e6a8c64f3eb7d.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e23ea11124bb700eeddd4ab7aa848c615f493850">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-cee9cfed38c8c53cbcae1be7cd3da160c6932a69.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="b99f0b78bbcb76b915bc6529a83b65d4d46990dd">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-5d5829c90677792a6fe8c801733f2682de2d7c10.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c5cafb324568d954780abb858c25db7ce675ab3c">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-ea5c7dbe81717e2c28cf93044789b70e5ec73c50.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="6e85edfc9b5346d216e50ccef1f8e825504144a3">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-46d7b9071fd80d4d1b6177fe935f1906cc0b2f4f.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="0632f06970823b7e3436f649bfa65b47035c91d0">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-3748b3abf6e8198fb7d1fd084e4f5cda71f66674.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="adebe28e0c0c05d34a3bfd76f3275bf4d8ff87b6">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-2339c9c4c45fcf3173c7e270aff07c9726d87800.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="dcf8c83c3dead00a6c4fe313e95f7aaca20dc641">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-ee02f7c31d0f1d3bf4e42c4fddf2c39226a0afc3.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="77a9dcb5f8b1dba36aacaa9c150eb0942dbea158">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-12c2e73b86cde25b983bb6179a490b04ba4af7e6.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="166e458ee3b5fb5fcff0f936df3f3a788e6c54f3">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-0bcec0d4b6f1940da4205f36f839dda8173a67a2.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="0124ce31248c0e8acfa2b28283c6d1a4d76e73d2">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-9a2be711e29f07e02425a1970d60c23b7c41c6ce.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="42a1ee578b62fd1bd28b3307a679dc9ba0791587">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-b93e044cbf6ccfda19a3cdbf8dea54f8333ec4e7.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c2ac04c5b232f6f0658ee4f1c13be09cd76406e2">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-94336b7c7f2e9bd2f610a5a3eba3c6116673a987.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appstate/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="edea92852b40eee716e910af8dad9eeaa58fb0e1">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-9cbfa182dd6dc0e38aafb3d80b7e8fe34468cc26.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c756d14e99d39471e99013a1e8fd2f3813ed42bf">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-07f46c6411107e60c617ba7e71fb678e7b1753d5.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="2491ae1b2a848af1f4f0c795f3117c1bd6a1989f">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-85e6a67af9e9fe6b6f9008269b295b4221b897fc.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1ff30fa49c07a08c3035d7218a3efebf5680d522">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-52b05f397005b77ac2d2d2cb75f540147da2aa74.jar" />
+    </item>
+    <item
+        jar="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/7.8.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="130b32ed466fa0f63efd4c7d6250ccd2ed506790">
+        <dex dex="/Users/chasedeets/AndroidStudioProjects/MemLoc/MemLoc/app/build/intermediates/pre-dexed/debug/classes-7ae197ee4678759581cd863c59372a7ad2b47a29.jar" />
     </item>
 
 </items>
