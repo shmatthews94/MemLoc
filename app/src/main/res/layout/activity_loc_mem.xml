@@ -3,7 +3,9 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".LocMem">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".LocMem"
+    android:id="@+id/RelativeLayout1">
 
     <TextView android:text="Remind me to:" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,11 +20,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/Task"
         android:layout_marginTop="40dp"
-        android:text="do what?"
         android:textSize="20dp"
         android:textAlignment="center"
         android:layout_below="@+id/Remind"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:hint="do what?" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,46 +49,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Location"
-        android:text="What is this place?"
         android:textColor="#6a6a6a"
-        android:layout_below="@+id/Arriving"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/Added"
-        android:layout_above="@+id/MemBank"
-        android:layout_centerHorizontal="true" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Arrive"
-        android:id="@+id/Arriving"
-        android:checked="true"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/Added"
-        android:layout_toStartOf="@+id/Added" />
-
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Leave"
-        android:id="@+id/Leaving"
-        android:checked="false"
-        android:layout_alignTop="@+id/Arriving"
-        android:layout_alignRight="@+id/Location"
-        android:layout_alignEnd="@+id/Location" />
+        android:hint="name of place"
+        android:layout_above="@+id/Add"
+        android:layout_alignLeft="@+id/Remind"
+        android:layout_alignStart="@+id/Remind"
+        android:layout_marginBottom="40dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
         android:id="@+id/Add"
-        android:layout_above="@+id/Added"
         android:layout_centerHorizontal="true"
-        android:onClick="createReminder" />
+        android:onClick="createReminder"
+        android:layout_above="@+id/MemBank" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/Added"
+        android:layout_above="@+id/Add"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/When"
+        android:layout_above="@+id/Location">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arrive"
+            android:id="@+id/Arriving"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"
+            android:layout_alignTop="@+id/radioGroup"
+            android:layout_toLeftOf="@+id/Added"
+            android:layout_toStartOf="@+id/Added"
+            android:layout_gravity="center_horizontal" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Leave"
+            android:id="@+id/Leaving"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/When"
+            android:layout_toEndOf="@+id/When"
+            android:layout_gravity="center_horizontal" />
+
+    </RadioGroup>
 
 </RelativeLayout>
