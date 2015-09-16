@@ -7,7 +7,7 @@
 
     <TextView android:text="Remind me to:" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
+        android:id="@+id/Remind"
         android:layout_marginTop="38dp"
         android:textSize="20dp"
         android:layout_alignParentTop="true"
@@ -16,68 +16,77 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
-        android:layout_marginTop="41dp"
+        android:id="@+id/Task"
+        android:layout_marginTop="40dp"
         android:text="do what?"
         android:textSize="20dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2"
-        android:textAlignment="center" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:text="I Leave"
-        android:clickable="true"
-        android:background="#ff2626"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="I arrive"
-        android:id="@+id/button2"
-        android:clickable="true"
-        android:background="#36eeff"
-        android:layout_alignBaseline="@+id/button"
-        android:layout_alignBottom="@+id/button"
-        android:layout_toLeftOf="@+id/textView2"
-        android:layout_toStartOf="@+id/textView2" />
+        android:textAlignment="center"
+        android:layout_below="@+id/Remind"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="When I"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
-        android:textSize="25dp" />
+        android:id="@+id/When"
+        android:layout_marginTop="23dp"
+        android:textSize="25dp"
+        android:layout_below="@+id/Task"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mem Bank"
-        android:id="@+id/button3"
+        android:id="@+id/MemBank"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
-        android:layout_marginTop="30dp"
+        android:id="@+id/Location"
         android:text="What is this place?"
-        android:layout_below="@+id/button"
+        android:textColor="#6a6a6a"
+        android:layout_below="@+id/Arriving"
         android:layout_centerHorizontal="true"
-        android:textColor="#6a6a6a" />
+        android:layout_marginTop="27dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Added"
+        android:layout_above="@+id/MemBank"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Arrive"
+        android:id="@+id/Arriving"
+        android:checked="true"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/Added"
+        android:layout_toStartOf="@+id/Added" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Leave"
+        android:id="@+id/Leaving"
+        android:checked="false"
+        android:layout_alignTop="@+id/Arriving"
+        android:layout_alignRight="@+id/Location"
+        android:layout_alignEnd="@+id/Location" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/Add"
+        android:layout_above="@+id/Added"
+        android:layout_centerHorizontal="true"
+        android:onClick="createReminder" />
 
 </RelativeLayout>
