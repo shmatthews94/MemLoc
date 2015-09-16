@@ -72,6 +72,19 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
                 .build();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mGoogleApiClient.connect();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (mGoogleApiClient.isConnected()) {
+            mGoogleApiClient.disconnect();
+        }
+    }
 
 
     @Override
@@ -102,6 +115,18 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         Reminders.add(q);
         if (Reminders.contains(q)) {
             this.Added.setText("Added!");
+            if (mLastLocation != null) {
+                mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
+                mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
+            } else {
+                Log.i(TAG, "no location detected");
+            }
+            //System.out.println(String.valueOf(mLastLocation.getLatitude()));
+            //System.out.println(String.valueOf(mLastLocation.getLongitude()));
+            //this.mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
+            //this.mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
+            //mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
+            //mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
             //mLatitudeText.setText((int) manager.getLastKnownLocation(Context.LOCATION_SERVICE).getLatitude());
             //mLongitudeText.setText((int) manager.getLastKnownLocation(Context.LOCATION_SERVICE).getLongitude());
         }
