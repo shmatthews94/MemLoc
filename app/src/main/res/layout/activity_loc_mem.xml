@@ -10,16 +10,15 @@
     <TextView android:text="Remind me to:" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Remind"
-        android:layout_marginTop="38dp"
         android:textSize="20dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/Location"
+        android:layout_alignEnd="@+id/Location" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Task"
-        android:layout_marginTop="19dp"
         android:textSize="20dp"
         android:textAlignment="center"
         android:hint="do what?"
@@ -33,7 +32,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="When I"
         android:id="@+id/When"
-        android:layout_marginTop="28dp"
         android:textSize="25dp"
         android:layout_below="@+id/Task"
         android:layout_centerHorizontal="true" />
@@ -52,8 +50,7 @@
         android:id="@+id/Location"
         android:textColor="#6a6a6a"
         android:hint="name of place"
-        android:layout_marginBottom="53dp"
-        android:layout_above="@+id/Added"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -78,9 +75,7 @@
         android:layout_height="150dp"
         android:id="@+id/radioGroup"
         android:layout_below="@+id/When"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
-        android:layout_above="@+id/Location">
+        android:layout_centerHorizontal="true">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -114,12 +109,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/mLatitudeText"
-        android:layout_marginBottom="18dp"
-        android:layout_above="@+id/Added"
-        android:layout_toLeftOf="@+id/mLongitudeText"
-        android:layout_toStartOf="@+id/mLongitudeText"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp" />
+        android:layout_below="@+id/Location"
+        android:layout_alignLeft="@+id/mLongitudeText"
+        android:layout_alignStart="@+id/mLongitudeText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -127,8 +119,8 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/mLongitudeText"
-        android:layout_alignTop="@+id/mLatitudeText"
-        android:layout_toRightOf="@+id/Added"
-        android:layout_toEndOf="@+id/Added" />
+        android:layout_below="@+id/mLatitudeText"
+        android:layout_alignLeft="@+id/When"
+        android:layout_alignStart="@+id/When" />
 
 </RelativeLayout>
