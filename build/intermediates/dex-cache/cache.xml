@@ -2,32 +2,25 @@
 <items version="2" >
 
     <item
-        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
+        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/classes-9b158dee13cdc31532d76b048338b8b166ea2c33.jar" />
+        sha1="c0c912d58c9468b1f9d9769c8975afdf2c85d681">
+        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/classes-2d42b1aebcfe4347512a5d6933f5807e85061bca.jar" />
     </item>
     <item
-        jar="/Users/shanematthews/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.0/support-annotations-23.0.0.jar"
+        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
-        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.0-7ac65362a8e805fc73d53457f2b9149a3b3c026e.jar" />
+        sha1="4a135d56554069e5d0ff80e3220e887e57146ee5">
+        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/classes-c4e9ff3e0c1c96f4cc380e6f7404b9d9fe9399d1.jar" />
     </item>
     <item
-        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/7.8.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.0"
-        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
-        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0-7a1b91302ba168132e4946b18f86e41db0454e8d.jar" />
-    </item>
-    <item
-        jar="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.0"
-        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
-        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/classes-5e988df288b7a5b7f47ea54c669898bf8b38b942.jar" />
+        sha1="cb6fab7a71fa9ec1f483d44c5fca65ab469d8aca">
+        <dex dex="/Users/shanematthews/Documents/MemLoc/app/build/intermediates/pre-dexed/debug/classes-a18b1341d59f179da951df38055ee6aca7859e8c.jar" />
     </item>
 
 </items>

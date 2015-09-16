@@ -19,12 +19,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Task"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="19dp"
         android:textSize="20dp"
         android:textAlignment="center"
+        android:hint="do what?"
         android:layout_below="@+id/Remind"
-        android:layout_centerHorizontal="true"
-        android:hint="do what?" />
+        android:layout_alignRight="@+id/Add"
+        android:layout_alignEnd="@+id/Add" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,7 +33,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="When I"
         android:id="@+id/When"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="28dp"
         android:textSize="25dp"
         android:layout_below="@+id/Task"
         android:layout_centerHorizontal="true" />
@@ -51,19 +52,18 @@
         android:id="@+id/Location"
         android:textColor="#6a6a6a"
         android:hint="name of place"
-        android:layout_above="@+id/Add"
-        android:layout_alignLeft="@+id/Remind"
-        android:layout_alignStart="@+id/Remind"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="53dp"
+        android:layout_above="@+id/Added"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
         android:id="@+id/Add"
-        android:layout_centerHorizontal="true"
         android:onClick="createReminder"
-        android:layout_above="@+id/MemBank" />
+        android:layout_above="@+id/MemBank"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,10 +74,12 @@
         android:layout_centerHorizontal="true" />
 
     <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
         android:id="@+id/radioGroup"
         android:layout_below="@+id/When"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
         android:layout_above="@+id/Location">
 
         <RadioButton
@@ -105,5 +107,28 @@
             android:layout_gravity="center_horizontal" />
 
     </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/mLatitudeText"
+        android:layout_marginBottom="18dp"
+        android:layout_above="@+id/Added"
+        android:layout_toLeftOf="@+id/mLongitudeText"
+        android:layout_toStartOf="@+id/mLongitudeText"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/mLongitudeText"
+        android:layout_alignTop="@+id/mLatitudeText"
+        android:layout_toRightOf="@+id/Added"
+        android:layout_toEndOf="@+id/Added" />
 
 </RelativeLayout>
