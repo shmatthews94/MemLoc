@@ -2,6 +2,7 @@ package meets.chane.memloc;
 
 //import android.Manifest;
 //import android.content.pm.PackageManager;
+import android.content.Intent;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     protected TextView mLongitudeText;
     protected static final String TAG = "memloc sample";
     LocationManager manager;
+    public final static String EXTRA_MESSAGE = "chane.meets.MemLoc.MESSAGE";
 
 
 
@@ -49,7 +51,6 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loc_mem);
-
         Add = (Button) findViewById(R.id.Add);
         Leaving = (RadioButton) findViewById(R.id.Leaving);
         Arriving = (RadioButton) findViewById(R.id.Arriving);
@@ -178,6 +179,14 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         // attempt to re-establish the connection.
         Log.i(TAG, "Connection suspended");
         mGoogleApiClient.connect();
+    }
+
+    public void dispMemBank(View view){
+        Intent intent = new Intent(this, MemBank.class);
+        EditText editText = (EditText) findViewById(R.id.Location);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 
     /*
