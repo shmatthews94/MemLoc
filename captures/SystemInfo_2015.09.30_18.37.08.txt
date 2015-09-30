@@ -1,0 +1,37 @@
+Applications Memory Usage (kB):
+Uptime: 55703477 Realtime: 685612840
+
+** MEMINFO in pid 8857 [meets.chane.memloc] **
+                         Shared  Private     Heap     Heap     Heap
+                   Pss    Dirty    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------
+       Native        0        0        0     7172     6507      388
+       Dalvik     5011    11696     4248    10824    10452      372
+        Stack      100        8      100                           
+       Cursor        4        0        4                           
+       Ashmem        0        0        0                           
+    Other dev     1666     1600      876                           
+     .so mmap     1512     2580      780                           
+    .jar mmap        0        0        0                           
+    .apk mmap      155        0        0                           
+    .ttf mmap        5        0        0                           
+    .dex mmap     3231        0       20                           
+   Other mmap       36        8        4                           
+      Unknown     3265      560     3248                           
+        TOTAL    14985    16452     9280    17996    16959      760
+ 
+ Objects
+               Views:       43         ViewRootImpl:        2
+         AppContexts:        4           Activities:        2
+              Assets:        2        AssetManagers:        2
+       Local Binders:       16        Proxy Binders:       26
+    Death Recipients:        1
+     OpenSSL Sockets:        0
+ 
+ SQL
+         MEMORY_USED:       94
+  PAGECACHE_OVERFLOW:       20          MALLOC_SIZE:       62
+ 
+ DATABASES
+      pgsz     dbsz   Lookaside(b)          cache  Dbname
+         4       16             33         2/17/3  /data/data/meets.chane.memloc/databases/MemLoc.db

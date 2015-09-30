@@ -16,8 +16,8 @@ import android.widget.EditText;
 import android.view.View;
 import android.widget.TextView;
 import android.content.Context;
-//import android.location.Location;
-//import android.widget.Toast;
+import android.database.sqlite.SQLiteDatabase;
+
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -28,6 +28,8 @@ import com.google.android.gms.location.meets.chane.memloc.R;
 
 import java.util.ArrayList;
 
+
+
 public class LocMem extends AppCompatActivity implements ConnectionCallbacks, OnConnectionFailedListener{
 
     private Button Add;
@@ -37,6 +39,8 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     private EditText Task;
     private EditText Location;
     private ArrayList<Reminder> Reminders;
+    MemLocDbHelper mDbHelper;
+    SQLiteDatabase db;
     protected GoogleApiClient mGoogleApiClient;
     protected Location mLastLocation;
     protected TextView mLatitudeText;
@@ -62,6 +66,8 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         mLongitudeText = (TextView) findViewById((R.id.mLongitudeText));
         manager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         buildGoogleApiClient();
+        mDbHelper = new MemLocDbHelper(getApplicationContext());
+        db = mDbHelper.getWritableDatabase();
 
     }
 
@@ -111,8 +117,15 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     }
 
     public void createReminder(View v) {
+
         Reminder q = new Reminder(true, "home");
-        //Reminder r = new Reminder(this.Leaving.isChecked(), this.Location.getText().toString());
+        mDbHelper.addReminder(db, "task", "location", "latitude", "longitude");
+
+        //Cursor c = db.rawQuery("SELECT * FROM Reminders", null);
+        //if(c.moveToFirst()) {
+        //    Log.i(TAG, "First position!");
+        //}
+        //Reminder q = new Reminder(this.Leaving.isChecked(), this.Location.getText().toString());
         Reminders.add(q);
         if (Reminders.contains(q)) {
             this.Added.setText("Added!");
@@ -122,30 +135,18 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
             } else {
                 Log.i(TAG, "no location detected");
             }
-            //System.out.println(String.valueOf(mLastLocation.getLatitude()));
-            //System.out.println(String.valueOf(mLastLocation.getLongitude()));
-            //this.mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-            //this.mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
-            //mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-            //mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
-            //mLatitudeText.setText((int) manager.getLastKnownLocation(Context.LOCATION_SERVICE).getLatitude());
-            //mLongitudeText.setText((int) manager.getLastKnownLocation(Context.LOCATION_SERVICE).getLongitude());
         }
     }
 
     public void onRadioButtonClicked(View v) {
-        // Is the button now checked?
         boolean checked = ((RadioButton) v).isChecked();
 
-        // Check which radio button was clicked
         switch(v.getId()) {
             case R.id.Leaving:
                 if (checked)
-                    // Pirates are the best
                     break;
             case R.id.Arriving:
                 if (checked)
-                    // Ninjas rule
                     break;
         }
     }
@@ -183,51 +184,10 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
 
     public void dispMemBank(View view){
         Intent intent = new Intent(this, MemBank.class);
-        EditText editText = (EditText) findViewById(R.id.Location);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+        //EditText editText = (EditText) findViewById(R.id.Location);
+        //String message = editText.getText().toString();
+        //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 
-    /*
-    protected synchronized void buildGoogleApiClient() {
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(LocationServices.API)
-                .build();
-    }
-
-    @Override
-    public void onConnected(Bundle connectionHint) {
-        // Provides a simple way of getting a device's location and is well suited for
-        // applications that do not require a fine-grained location and that do not need location
-        // updates. Gets the best and most recent location currently available, which may be null
-        // in rare cases when a location is not available.
-        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        if (mLastLocation != null) {
-            mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-            mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
-        } else {
-            Toast.makeText(this, "No location detected", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    @Override
-    public void onConnectionFailed(ConnectionResult result) {
-        // Refer to the javadoc for ConnectionResult to see what error codes might be returned in
-        // onConnectionFailed.
-        //Log.i(TAG, "Connection failed: ConnectionResult.getErrorCode() = " + result.getErrorCode());
-    }
-
-
-    @Override
-    public void onConnectionSuspended(int cause) {
-        // The connection to Google Play services was lost for some reason. We call connect() to
-        // attempt to re-establish the connection.
-        //Log.i(TAG, "Connection suspended");
-        mGoogleApiClient.connect();
-    }
-
-    */
 }

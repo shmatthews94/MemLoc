@@ -1,6 +1,7 @@
 package meets.chane.memloc;
 import java.sql.Timestamp;
 import java.util.Date;
+import android.provider.BaseColumns;
 import android.location.Location;
 
 /**

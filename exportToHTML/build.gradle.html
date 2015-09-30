@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>build.gradle</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { }
+.s1 { color: rgb(0,128,0); font-weight: bold; }
+.s2 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+build.gradle</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<span class="s0">apply plugin: </span><span class="s1">'com.android.application'</span><span class="s0"> 
+ 
+android { 
+    compileSdkVersion </span><span class="s2">23</span><span class="s0"> 
+    buildToolsVersion </span><span class="s1">&quot;23.0.0&quot;</span><span class="s0"> 
+ 
+    defaultConfig { 
+        applicationId </span><span class="s1">&quot;meets.chane.memloc&quot;</span><span class="s0"> 
+        minSdkVersion </span><span class="s2">16</span><span class="s0"> 
+        targetSdkVersion </span><span class="s2">23</span><span class="s0"> 
+        versionCode </span><span class="s2">1</span><span class="s0"> 
+        versionName </span><span class="s1">&quot;1.0&quot;</span><span class="s0"> 
+    } 
+    signingConfigs { 
+        release { 
+            storeFile file(</span><span class="s1">&quot;myreleasekey.keystore&quot;</span><span class="s0">) 
+            storePassword </span><span class="s1">&quot;password&quot;</span><span class="s0"> 
+            keyAlias </span><span class="s1">&quot;MyReleaseKey&quot;</span><span class="s0"> 
+            keyPassword </span><span class="s1">&quot;password&quot;</span><span class="s0"> 
+        } 
+    } 
+    buildTypes { 
+        release { 
+            minifyEnabled false 
+            proguardFiles getDefaultProguardFile(</span><span class="s1">'proguard-android.txt'</span><span class="s0">), </span><span class="s1">'proguard-rules.pro'</span><span class="s0"> 
+            signingConfig signingConfigs.release 
+        } 
+    } 
+} 
+ 
+dependencies { 
+    compile fileTree(dir: </span><span class="s1">'libs'</span><span class="s0">, include: [</span><span class="s1">'*.jar'</span><span class="s0">]) 
+    compile </span><span class="s1">'com.android.support:appcompat-v7:23.0.0'</span><span class="s0"> 
+    compile </span><span class="s1">'com.google.android.gms:play-services-location:7.8.0'</span><span class="s0"> 
+    compile </span><span class="s1">'com.google.android.gms:play-services:7.8.0'</span><span class="s0"> 
+} 
+</span></pre>
+</body>
+</html>
