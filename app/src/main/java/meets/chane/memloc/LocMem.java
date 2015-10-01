@@ -50,7 +50,6 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     public final static String EXTRA_MESSAGE = "chane.meets.MemLoc.MESSAGE";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,7 +118,11 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     public void createReminder(View v) {
 
         Reminder q = new Reminder(true, "home");
-        mDbHelper.addReminder(db, "task", "location", "latitude", "longitude");
+        String arriving = "0";
+        if(this.Arriving.isChecked()) {
+            arriving = "1";
+        }
+        mDbHelper.addReminder(db, String.valueOf(Task.getText()), arriving, String.valueOf(Location.getText()), (String.valueOf(mLastLocation.getLatitude())), (String.valueOf(mLastLocation.getLongitude())));
 
         //Cursor c = db.rawQuery("SELECT * FROM Reminders", null);
         //if(c.moveToFirst()) {
@@ -130,8 +133,8 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         if (Reminders.contains(q)) {
             this.Added.setText("Added!");
             if (mLastLocation != null) {
-                mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-                mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
+                mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()).substring(0, 5));
+                mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()).substring(0, 5));
             } else {
                 Log.i(TAG, "no location detected");
             }
@@ -159,8 +162,8 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         // in rare cases when a location is not available.
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
-            mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()));
-            mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()));
+            mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()).substring(0, 5));
+            mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()).substring(0, 5));
         } else {
             Log.i(TAG, "no location detected");
         }

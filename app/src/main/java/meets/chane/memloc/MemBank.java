@@ -7,29 +7,47 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.Cursor;
+import android.util.Log;
 
 import com.google.android.gms.location.meets.chane.memloc.R;
 
 
 public class MemBank extends AppCompatActivity {
-    private TextView LocText;
-    private TextView textView2;
+
+    protected static final String TAG = "memloc sample";
+    protected TextView Reminder1;
+    MemLocDbHelper dbHelper;
+    SQLiteDatabase db;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mem_bank);
+        dbHelper = new MemLocDbHelper(getApplicationContext());
+        db = dbHelper.getReadableDatabase();
 
-        // Get the message from the intent
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(LocMem.EXTRA_MESSAGE);
+        Cursor c = db.rawQuery("SELECT * FROM Reminders", null);
+        StringBuffer buffer=new StringBuffer();
+        while(c.moveToNext())
+        {
+            buffer.append(c.getString(1)+" ");
+            if(c.getString(0).compareTo("1") == 0) {
+                buffer.append("when I arrive at "+c.getString(2)+": ");
+            }
+            else {
+                buffer.append("before I leave "+c.getString(2)+": ");
+            }
+            buffer.append("Lat: "+c.getString(3).substring(0, 5) + " ");
+            buffer.append("Lon: "+c.getString(4).substring(0, 5) + "\n");
+        }
 
-        // Create the text view
-        TextView textView = (TextView) findViewById(R.id.LocText);
-        textView.setText(message);
 
+        Reminder1 = (TextView) findViewById(R.id.Reminder1);
+        Reminder1.setText(buffer);
         // Set the text view as the activity layout
-        setContentView(textView);
+        // setContentView(textView);
     }
 
     @Override

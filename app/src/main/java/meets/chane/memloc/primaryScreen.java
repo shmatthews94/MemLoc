@@ -43,4 +43,9 @@ public class primaryScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void dispMemBank(View view){
+        Intent intent = new Intent(this, MemBank.class);
+        startActivity(intent);
+    }
+
 }
