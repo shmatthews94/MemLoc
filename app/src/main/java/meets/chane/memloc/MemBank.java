@@ -5,13 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.Cursor;
 import android.util.Log;
 
 import com.google.android.gms.location.meets.chane.memloc.R;
+
+import java.util.ArrayList;
 
 
 public class MemBank extends AppCompatActivity {
@@ -20,6 +24,9 @@ public class MemBank extends AppCompatActivity {
     protected TextView Reminder1;
     MemLocDbHelper dbHelper;
     SQLiteDatabase db;
+    private ListView locsListView;
+    private ArrayAdapter arrayAdapter;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,25 +34,38 @@ public class MemBank extends AppCompatActivity {
         setContentView(R.layout.activity_mem_bank);
         dbHelper = new MemLocDbHelper(getApplicationContext());
         db = dbHelper.getReadableDatabase();
-
+        ArrayList<String> locs = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT * FROM Reminders", null);
         StringBuffer buffer=new StringBuffer();
+
         while(c.moveToNext())
         {
-            buffer.append(c.getString(1)+" ");
+            String remind = "";
+            //locs.add(c.getString(2));
+            remind += (c.getString(1)+" ");
             if(c.getString(0).compareTo("1") == 0) {
-                buffer.append("when I arrive at "+c.getString(2)+": ");
+                remind += ("when I arrive at "+c.getString(2)+": ");
             }
             else {
-                buffer.append("before I leave "+c.getString(2)+": ");
+                remind += ("before I leave "+c.getString(2)+": ");
             }
-            buffer.append("Lat: "+c.getString(3).substring(0, 5) + " ");
-            buffer.append("Lon: "+c.getString(4).substring(0, 5) + "\n");
+            remind += ("Lat: "+c.getString(3).substring(0, 5) + " ");
+            remind += ("Lon: "+c.getString(4).substring(0, 5) + "\n");
+            locs.add(remind);
         }
 
 
-        Reminder1 = (TextView) findViewById(R.id.Reminder1);
-        Reminder1.setText(buffer);
+        locsListView = (ListView) findViewById(R.id.listView);
+
+        // this-The current activity context.
+        // Second param is the resource Id for list layout row item
+        // Third param is input array
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, locs);
+        locsListView.setAdapter(arrayAdapter);
+
+
+        //Reminder1 = (TextView) findViewById(R.id.Reminder1);
+        //Reminder1.setText(buffer);d
         // Set the text view as the activity layout
         // setContentView(textView);
     }
