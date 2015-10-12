@@ -124,4 +124,17 @@
         android:layout_alignLeft="@+id/When"
         android:layout_alignStart="@+id/When" />
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton2"
+        android:layout_above="@+id/MemBank"
+        android:layout_toRightOf="@+id/Location"
+        android:background="@mipmap/cameraicon"
+        android:layout_alignTop="@+id/Add"
+        android:layout_alignRight="@+id/radioGroup"
+        android:layout_alignEnd="@+id/radioGroup"
+        android:clickable="true"
+        android:onClick="takePhoto" />
+
 </RelativeLayout>
