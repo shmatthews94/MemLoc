@@ -67,8 +67,6 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     public List<Geofence> geofences;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,15 +134,11 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     }
 
     public void addGeofence() {
-        if(this.Arriving.isChecked()) {
+        if (this.Arriving.isChecked()) {
             geofences.add(new Geofence.Builder().setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER).setRequestId(String.valueOf(Location.getText())).setCircularRegion(mLastLocation.getLatitude(), mLastLocation.getLatitude(), 100).setExpirationDuration(604800000).build());
-        }
-        else {
+        } else {
             geofences.add(new Geofence.Builder().setTransitionTypes(Geofence.GEOFENCE_TRANSITION_EXIT).setRequestId(String.valueOf(Location.getText())).setCircularRegion(mLastLocation.getLatitude(), mLastLocation.getLatitude(), 100).setExpirationDuration(604800000).build());
         }
-    }
-    public List<Geofence> getGeofenceList() {
-        return geofences;
     }
 
     public void createReminder(View v) {
@@ -195,8 +189,8 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         // in rare cases when a location is not available.
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
-            mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()).substring(0, 5));
-            mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()).substring(0, 5));
+            mLatitudeText.setText(String.valueOf(mLastLocation.getLatitude()).substring(0, 6));
+            mLongitudeText.setText(String.valueOf(mLastLocation.getLongitude()).substring(0, 7));
         } else {
             Log.i(TAG, "no location detected");
         }
@@ -277,7 +271,8 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         return mediaFile;
     }
 
-
-
+    public List<Geofence> getGeofenceList() {
+        return geofences;
+    }
 
 }

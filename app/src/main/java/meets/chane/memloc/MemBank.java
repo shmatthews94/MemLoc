@@ -42,15 +42,16 @@ public class MemBank extends AppCompatActivity {
         {
             String remind = "";
             //locs.add(c.getString(2));
-            remind += (c.getString(1)+" ");
+            String output = c.getString(1).substring(0, 1).toUpperCase() + c.getString(1).substring(1);
+            remind += (output+" ");
             if(c.getString(0).compareTo("1") == 0) {
                 remind += ("when I arrive at "+c.getString(2)+": ");
             }
             else {
                 remind += ("before I leave "+c.getString(2)+": ");
             }
-            remind += ("Lat: "+c.getString(3).substring(0, 5) + " ");
-            remind += ("Lon: "+c.getString(4).substring(0, 5) + "\n");
+            remind += ("Lat: "+c.getString(3).substring(0, 6) + " ");
+            remind += ("Lon: "+c.getString(4).substring(0, 7) + "\n");
             locs.add(remind);
         }
 
