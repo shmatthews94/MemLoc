@@ -20,22 +20,29 @@ import android.view.View;
 import android.widget.TextView;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import com.google.android.gms.location.Geofence;
+import com.google.android.gms.location.GeofencingEvent;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
-import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.meets.chane.memloc.R;
+
+import static com.google.android.gms.location.LocationServices.FusedLocationApi;
+import static com.google.android.gms.location.LocationServices.GeofencingApi;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 
 
-public class LocMem extends AppCompatActivity implements ConnectionCallbacks, OnConnectionFailedListener{
+public class LocMem extends AppCompatActivity implements ConnectionCallbacks, OnConnectionFailedListener {
 
     private Button Add;
     private RadioButton Leaving;
@@ -43,7 +50,7 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     private TextView Added;
     private EditText Task;
     private EditText Location;
-    private ArrayList<Reminder> Reminders;
+    private List<Reminder> Reminders;
     MemLocDbHelper mDbHelper;
     SQLiteDatabase db;
     protected GoogleApiClient mGoogleApiClient;
@@ -57,6 +64,7 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
     public static final int MEDIA_TYPE_VIDEO = 2;
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
     private Uri fileUri;
+    public List<Geofence> geofences;
 
 
 
@@ -78,6 +86,7 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         buildGoogleApiClient();
         mDbHelper = new MemLocDbHelper(getApplicationContext());
         db = mDbHelper.getWritableDatabase();
+        geofences = new ArrayList<Geofence>();
 
     }
 
@@ -126,15 +135,28 @@ public class LocMem extends AppCompatActivity implements ConnectionCallbacks, On
         return super.onOptionsItemSelected(item);
     }
 
+    public void addGeofence() {
+        if(this.Arriving.isChecked()) {
+            geofences.add(new Geofence.Builder().setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER).setRequestId(String.valueOf(Location.getText())).setCircularRegion(mLastLocation.getLatitude(), mLastLocation.getLatitude(), 100).setExpirationDuration(604800000).build());
+        }
+        else {
+            geofences.add(new Geofence.Builder().setTransitionTypes(Geofence.GEOFENCE_TRANSITION_EXIT).setRequestId(String.valueOf(Location.getText())).setCircularRegion(mLastLocation.getLatitude(), mLastLocation.getLatitude(), 100).setExpirationDuration(604800000).build());
+        }
+    }
+    public List<Geofence> getGeofenceList() {
+        return geofences;
+    }
+
     public void createReminder(View v) {
 
-        Reminder q = new Reminder(true, "home");
+        Reminder q = new Reminder(Arriving.isChecked(), mLastLocation.getLatitude(), mLastLocation.getLongitude());
         String arriving = "0";
         if(this.Arriving.isChecked()) {
             arriving = "1";
         }
         mDbHelper.addReminder(db, String.valueOf(Task.getText()), arriving, String.valueOf(Location.getText()), (String.valueOf(mLastLocation.getLatitude())), (String.valueOf(mLastLocation.getLongitude())));
-
+        addGeofence();
+        //mLatitudeText.setText(geofences.size());
         //Cursor c = db.rawQuery("SELECT * FROM Reminders", null);
         //if(c.moveToFirst()) {
         //    Log.i(TAG, "First position!");

@@ -8,14 +8,13 @@ import android.location.Location;
  * Created by shanematthews on 9/15/15.
  */
 public class Reminder {
-    private Date created;
     private boolean leaving;
-    private String location;
+    private double lat;
+    private double lon;
 
-    public Reminder(boolean leave, String location) {
-        this.location = location;
+    public Reminder(boolean leave, double lat, double lon) {
         this.leaving = leave;
-        Date date = new java.util.Date();
-        this.created = date;
+        this.lat = lat;
+        this.lon = lon;
     }
 }
